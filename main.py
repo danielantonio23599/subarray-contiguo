@@ -1,16 +1,13 @@
-# This is a sample Python script.
+from divisao_conquista import DivisaoConquista
+print(' Cálculo do Maior Subarray Contíguo, usando Divisão e Conquista ver 1.0 - IFMG 2023')
+print('Desenvolvido como trabalho prático para a disciplina de PAA')
+print('Autores: Daniel Antônio de Sá')
+solver = DivisaoConquista()
+entrada_usuario = input("Digite o array de numeros inteiros separados por espaço ex (-2 -3 4 -1 -2 1 5 -3): ")
+valores = entrada_usuario.split()
 
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
-
-
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
-
-
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+# Converte as substrings em inteiros
+lista_de_inteiros = [int(valor) for valor in valores]
+max_sum, list_sum = solver.maxSubArraySum(lista_de_inteiros, 0, int(len(lista_de_inteiros) - 1))
+print("A soma contígua máxima é: ", max_sum)
+print("A sublista de origem da soma é: ", list_sum)
